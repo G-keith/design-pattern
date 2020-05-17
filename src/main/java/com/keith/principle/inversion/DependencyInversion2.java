@@ -39,9 +39,6 @@ class WeXi implements IReceive {
 
 class Person2 {
 
-    /**
-     * 接收方法和Email强耦合,违反依赖倒转原则
-     */
     public void receive(IReceive iReceive) {
         System.out.println(iReceive.getInfo());
 
