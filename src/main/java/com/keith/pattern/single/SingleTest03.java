@@ -17,7 +17,7 @@ class Singleton06 {
 
     }
 
-    private static Singleton06 instance;
+    private static volatile Singleton06 instance;
 
     public static Singleton06 getInstance() {
         if (instance == null) {
