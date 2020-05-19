@@ -1,7 +1,7 @@
 package com.keith.pattern.single;
 
 /**
- * 饿汉式（静态常量）
+ *
  * @author keith
  * @version 1.0
  * @date 2020-05-19
@@ -48,6 +48,9 @@ class Singleton01{
     }
 }
 
+/**
+ * 饿汉式（静态代码块）
+ */
 class Singleton02{
 
     /**
