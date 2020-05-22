@@ -56,7 +56,25 @@ public class People3 implements Serializable,Cloneable{
                 '}';
     }
 
-    protected Object deepClone() {
+    /**
+     * 深拷贝 - 方式 1 使用clone 方法
+     */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+
+        Object deep = null;
+        //这里完成对基本数据类型(属性)和String的克隆
+        deep = super.clone();
+        //对引用类型的属性，进行单独处理
+        People3 people3 = (People3) deep;
+        people3.friend  = (Friend) friend.clone();
+        return people3;
+    }
+
+    /**
+     * 深拷贝 - 方式2 通过对象的序列化实现 (推荐)
+     */
+    public Object deepClone() {
         //创建流对象
         ByteArrayOutputStream bos = null;
         ObjectOutputStream oos = null;
@@ -71,8 +89,7 @@ public class People3 implements Serializable,Cloneable{
             //反序列化
             bis = new ByteArrayInputStream(bos.toByteArray());
             ois = new ObjectInputStream(bis);
-            People3 people3 = (People3) ois.readObject();
-            return people3;
+            return (People3) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

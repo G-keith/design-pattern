@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @version 1.0
  * @date 2020-05-22
  **/
-public class Friend implements Serializable {
+public class Friend implements Serializable,Cloneable {
 
     private String name;
 
@@ -28,5 +28,10 @@ public class Friend implements Serializable {
         return "Friend{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
