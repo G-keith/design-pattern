@@ -20,17 +20,6 @@ public class AnimalFactory {
                 return new Cock();
         }
     }
-
-    /**
-     * 多个工厂模式-静态工厂方法模式
-     */
-    public static Animal createDog(){
-        return new Dog();
-    }
-
-    public static Animal createCock(){
-        return new Cock();
-    }
 }
 
 class Test{
@@ -40,11 +29,5 @@ class Test{
         animal.eat();
         animal.walk();
         System.out.println("=================静态工厂方法模式==============");
-        Animal dog=AnimalFactory.createDog();
-        dog.eat();
-        dog.walk();
-        Animal cock=AnimalFactory.createCock();
-        cock.eat();
-        cock.walk();
     }
 }
