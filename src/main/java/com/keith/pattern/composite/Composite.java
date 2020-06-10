@@ -22,6 +22,10 @@ public class Composite implements Assoication{
         assoications.add(assoication);
     }
 
+    public void remove(int index){
+        assoications.remove(index);
+    }
+
     public List<Assoication> getAssoications(){
         return assoications;
     }
