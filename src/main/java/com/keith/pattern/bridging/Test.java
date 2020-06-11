@@ -1,6 +1,7 @@
 package com.keith.pattern.bridging;
 
 /**
+ *桥接模式
  * @author keith
  * @version 1.0
  * @date 2020-06-09
