@@ -16,6 +16,8 @@ public class FlyweightTest {
             circle.setY(getRandomY());
             circle.setRadius(100);
             circle.draw();
+            //颜色相同，将不会进行对象实例化
+            System.out.println("对象池中对象数量为："+ShapeFactory.getSize());
         }
     }
     private static String getRandomColor() {
